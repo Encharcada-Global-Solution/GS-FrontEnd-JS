@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encharcada</title>
+    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="shortcut icon" href="src/assets/imgs/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="src/assets/imgs/logo.png" alt="">
+        <nav>
+            <a href="#top">Ínicio</a>
+            <a href="#carrosselTecnologias">Tecnologias</a>
+            <a href="#objetivos">Objetivos</a>
+            <a href="#section4">Público</a>
+            <a href="#">Benefícios</a>
+            <a href="#">Solução</a>
+        </nav>
+        <img id="menuBurguer" src="src/assets/imgs/menu-burger.png" alt="">
+    </header>
+    <main>
+        <div id="fundo">
+            <h1 class="reveal">Todos os anos, milhares de pessoas são afetadas pelas enchentes. <br>
+                Casas alagadas, vidas perdidas, infraestrutura destruída. </h1>
+        </div>
+        <section id="carrosselTecnologias" class="reveal">
+            <div class="carrossel-container">
+                <div class="carrossel-slide ativo" data-bg="#00a6fb">
+                    <div class="slide-conteudo">
+                        <h2>Tecnologias Utilizadas</h2>
+                        <p>Coleta dados de sensores físicos para monitorar enchentes em tempo real.</p>
+                    </div>
+                </div>
+                <div class="carrossel-slide" data-bg="#0582ca">
+                    <div class="slide-conteudo">
+                        <h2>IoT</h2>
+                        <p>Transmite os dados captados pelos sensores para um sistema em nuvem.</p>
+                    </div>
+                </div>
+                <div class="carrossel-slide" data-bg="#006494">
+                    <div class="slide-conteudo">
+                        <h2>HTML, CSS e JS</h2>
+                        <p>Interface web responsiva para visualização das informações em tempo real.</p>
+                    </div>
+                </div>
+
+                <div class="carrossel-slide" data-bg="#004e98">
+                    <div class="slide-conteudo">
+                        <h2>Python</h2>
+                        <p>Processamento de dados e análise em tempo real.</p>
+                    </div>
+                </div>
+                <div class="carrossel-slide" data-bg="#3a6ea5">
+                    <div class="slide-conteudo">
+                        <h2>React</h2>
+                        <p>Interface interativa para visualização dos dados de sensores.</p>
+                    </div>
+                </div>
+                <div class="carrossel-slide" data-bg="#009688">
+                    <div class="slide-conteudo">
+                        <h2>Node.js</h2>
+                        <p>Serviço de backend para processamento e armazenamento dos dados.</p>
+                    </div>
+                </div>
+
+                <button id="anterior"><img src="src/assets/imgs/seta-esquerda.png" alt=""></button>
+                <button id="proximo"><img src="src/assets/imgs/seta-direita.png" alt=""></button>
+
+                <div class="indicadores">
+                    <span class="indicador ativo"></span>
+                    <span class="indicador"></span>
+                    <span class="indicador"></span>
+                    <span class="indicador"></span>
+                    <span class="indicador"></span>
+                    <span class="indicador"></span>
+                </div>
+            </div>
+        </section>
+        <section id="section3" class="reveal">
+            <div id="objetivos">
+                <h1>Nossos <br> Objetivos</h1>
+                <div class="divObjetivos">
+                    <h2>Alertar sobre riscos de enchente</h2>
+                    <p>Através de sensores integrados ao nosso sistema, a população será notificada imediatamente sempre
+                        que houver risco de alagamento, garantindo mais tempo para evacuação e segurança.
+                    </p>
+                </div>
+                <div class="divObjetivos">
+                    <h2>Monitorar níveis e chuvas automaticamente</h2>
+                    <p>Com sensores de nível e pluviômetros, o sistema registra e analisa os dados de forma contínua,
+                        sem intervenção humana, gerando relatórios precisos e atualizações constantes.
+                    </p>
+                </div>
+                <div class="divObjetivos">
+                    <h2>Interface acessível para todos</h2>
+                    <p>A interface web responsiva permite que qualquer pessoa, de qualquer dispositivo, acompanhe os
+                        níveis dos rios e alertas em tempo real, democratizando o acesso à informação.
+                    </p>
+                </div>
+                <div class="divObjetivos">
+                    <h2>Reduzir impactos sociais e ambientais</h2>
+                    <p>Ao antecipar riscos, evitamos perdas humanas, danos materiais e degradação ambiental,
+                        contribuindo para cidades mais resilientes e sustentáveis.
+                    </p>
+                </div>
+                <div class="divObjetivos">
+                    <h2>Auxiliar órgãos públicos na resposta rápida</h2>
+                    <p>Com dados centralizados e confiáveis, autoridades podem agir com mais precisão e rapidez,
+                        otimizando recursos e salvando vidas em situações críticas.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="section4">
+            <div id="secao4">
+                <div id="textos">
+                    <h1>Público-Alvo</h1>
+                    <p>A Encharcada foi feita pra todo mundo, pois a chuva não escolhe onde cair. Tem quem mora em área
+                        de risco e vive com medo da próxima chuva forte, e tem quem mora na cidade e já perdeu hora, carro
+                        ou móveis por causa de alagamento. A gente pensou em todos: moradores, prefeituras, Defesa Civil,
+                        ONGs e quem mais quiser ajudar a cuidar do problema.</p>
+
+                </div>
+                    <img src="src/assets/imgs/vertical.jpg" alt="">
+            </div>
+        </section>
+    </main>
+    <script src="src/assets/js/script.js"></script>
+</body>
+
+</html>
