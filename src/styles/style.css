@@ -14,10 +14,15 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'montserrat';
   overflow-x: hidden;
   background-color: #0A100D;
+  height: 100vh;
 }
 
 header {
@@ -30,7 +35,18 @@ header {
   position: fixed;
   top: 0;
   z-index: 9999;
+  transition: height 0.5s ease, opacity 0.3s ease-in;
 }
+
+header.shrink {
+  height: 7vh;
+  opacity: 0.5;
+}
+
+header.shrink:hover {
+  opacity: 1;
+}
+
 
 nav {
   width: 45%;
@@ -54,6 +70,7 @@ nav a:hover {
 #logo {
   height: 60%;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.445));
+  transition: height 0.3s ease;
 }
 
 #menuBurguer {
@@ -97,7 +114,7 @@ nav a:hover {
 
 .carrossel-container {
   position: relative;
-  width: 80%;
+  width: 60%;
   height: 80%;
   overflow: hidden;
   border-radius: 12px;
@@ -172,6 +189,7 @@ nav a:hover {
   width: 20px;
   height: 5px;
   margin: 0 2px;
+  border-radius: 20px;
   background-color: #fff;
   opacity: 0.5;
   transition: all 0.3s ease;
@@ -182,19 +200,47 @@ nav a:hover {
   background-color: #fff;
 }
 
+#section3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
 #objetivos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin: auto;
-  flex-wrap: wrap;
-  width: 70vw;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px; 
+  width: 60%; 
+  margin: 0 auto;
 }
 
 .divObjetivos {
-  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background-color: rgb(29, 29, 29);
+  border-radius: 20px;
   text-align: center;
   height: 250px;
   width: 250px;
+  transition-duration: 0.5s;
+}
+
+.divObjetivos:hover {
+  background-color: rgba(0, 0, 255, 0);
+  border: 1px solid white;
+}
+
+.divObjetivos:hover h2 {
+  display: none;
+}
+
+.divObjetivos:hover p {
+  opacity: 1;
+  display: block;
 }
 
 #objetivos h1 {
@@ -207,18 +253,60 @@ nav a:hover {
 
 .divObjetivos h2 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.445);
-  font-size: 1.7em;
-  display: none;
+  font-size: 1.4em;
   color: white;
 }
 
 .divObjetivos p {
+  opacity: 0;
   padding-top: 10px;
   display: none;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.445);
-  font-size: 1.3em;
+  font-size: 1em;
   color: white;
+  cursor: default;
+  transition: opacity 2s ease-in-out;
 }
+
+#section4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+#secao4 {
+  color: white;
+  display: flex;
+  height: 80%;
+  width: 60%;
+}
+
+#secao4 h1 {
+  font-size: 3em;
+}
+
+#secao4 p {
+  font-size: 1.5em;
+}
+
+#textos {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  
+}
+
+#secao4 img {
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.445);
+  height: 100%;
+}
+
+
+
 
 
 
@@ -230,7 +318,6 @@ nav a:hover {
   will-change: opacity, transform;
   position: relative;
 }
-
 
 .reveal.active {
   opacity: 1;
