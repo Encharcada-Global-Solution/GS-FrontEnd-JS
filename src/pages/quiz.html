@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Encharcada</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body style="background-image: url(../assets/imgs/fundoQuiz--.gif); background-size: 15%;">
+    <section id="quiz">
+        <div id="divQuiz">
+            <h2 id="pergunta"></h2>
+            <div id="opcoes"></div>
+            <p id="resultado"></p>
+        </div>
+    </section>
+    <script>
+        const perguntas = [
+            {
+                pergunta: "Qual destes é um sinal comum de enchente iminente?",
+                opcoes: [
+                    "Céu limpo e temperatura estável",
+                    "Cheiro forte de fumaça",
+                    "Subida rápida no nível da água",
+                    "Galinhas subindo em árvores"
+                ],
+                resposta: 2
+            },
+            {
+                pergunta: "O que fazer ao se deparar com uma rua alagada?",
+                opcoes: [
+                    "Tentar atravessar correndo",
+                    "Ligar para o amigo tirar uma foto",
+                    "Evitar a área e buscar rotas alternativas",
+                    "Mergulhar para medir a profundidade"
+                ],
+                resposta: 2
+            },
+            {
+                pergunta: "Qual órgão costuma emitir alertas de emergência?",
+                opcoes: [
+                    "Defesa Civil",
+                    "IBGE",
+                    "Receita Federal",
+                    "Banco Central"
+                ],
+                resposta: 0
+            },
+            {
+                pergunta: "O aplicativo Encharcada foi criado para?",
+                opcoes: [
+                    "Fazer previsão do tempo para surfistas",
+                    "Monitorar riscos de enchentes e enviar alertas",
+                    "Localizar vagas de estacionamento",
+                    "Reservar ingressos para shows"
+                ],
+                resposta: 1
+            },
+            {
+                pergunta: "Qual destes é um equipamento comum em projetos IoT?",
+                opcoes: [
+                    "Sensor de água",
+                    "Controle remoto",
+                    "Câmera de rolo",
+                    "Forno micro-ondas"
+                ],
+                resposta: 0
+            },
+            {
+                pergunta: "Quais pessoas são mais impactadas por enchentes?",
+                opcoes: [
+                    "Moradores de áreas de risco",
+                    "Viajantes frequentes",
+                    "Jogadores de futebol",
+                    "Turistas em museus"
+                ],
+                resposta: 0
+            },
+            {
+                pergunta: "O que significa IoT?",
+                opcoes: [
+                    "Internet das Tomadas",
+                    "Impressão online total",
+                    "Internet das Coisas",
+                    "Inovação ou Tensão"
+                ],
+                resposta: 2
+            },
+            {
+                pergunta: "Para onde vão os dados coletados pelos sensores do Encharcada?",
+                opcoes: [
+                    "Para um banco de dados e sistemas de alerta",
+                    "Para as redes sociais",
+                    "Para o armazenamento do celular",
+                    "Para a televisão"
+                ],
+                resposta: 0
+            },
+            {
+                pergunta: "Qual ação ajuda a prevenir alagamentos urbanos?",
+                opcoes: [
+                    "Jogar lixo no chão",
+                    "Plantar árvores e cuidar das calhas",
+                    "Construir em áreas de preservação",
+                    "Tapar bueiros com cimento"
+                ],
+                resposta: 1
+            },
+            {
+                pergunta: "O Encharcada se destaca porque é?",
+                opcoes: [
+                    "Feito apenas para grandes cidades",
+                    "Baseado em achismos",
+                    "Tecnológico, acessível e focado em quem mais precisa",
+                    "Limitado a governos"
+                ],
+                resposta: 2
+            }
+        ];
+
+        let indiceAtual = 0;
+        let pontuacao = 0;
+
+        const perguntaEl = document.getElementById("pergunta");
+        const opcoesEl = document.getElementById("opcoes");
+        const resultadoEl = document.getElementById("resultado");
+
+        function carregarPergunta() {
+            const atual = perguntas[indiceAtual];
+            perguntaEl.textContent = atual.pergunta;
+            opcoesEl.innerHTML = "";
+
+            atual.opcoes.forEach((opcao, index) => {
+                const btn = document.createElement("button");
+                btn.textContent = opcao;
+                btn.classList.add("opcao");
+                btn.onclick = () => verificarResposta(index);
+                opcoesEl.appendChild(btn);
+            });
+        }
+
+        function verificarResposta(respostaSelecionada) {
+            const correta = perguntas[indiceAtual].resposta;
+            const botoes = document.querySelectorAll(".opcao");
+
+            botoes.forEach((btn, index) => {
+                btn.disabled = true;
+                if (index === correta) {
+                    btn.style.backgroundColor = "#4CAF50"; // verde
+                }
+                if (index === respostaSelecionada && index !== correta) {
+                    btn.style.backgroundColor = "#f44336"; // vermelho
+                }
+            });
+
+            if (respostaSelecionada === correta) pontuacao++;
+
+            setTimeout(() => {
+                indiceAtual++;
+                if (indiceAtual < perguntas.length) {
+                    carregarPergunta();
+                } else {
+                    mostrarResultadoFinal();
+                }
+            }, 100); // 1 segundo antes de trocar a pergunta
+        }
+
+
+        function mostrarResultadoFinal() {
+            perguntaEl.textContent = "Fim do Quiz!";
+            perguntaEl.style.fontSize = '2em'
+            opcoesEl.innerHTML = '';
+            resultadoEl.innerHTML = `Você acertou <strong>${pontuacao}</strong> de <strong>${perguntas.length}</strong> perguntas.`;
+            resultadoEl.style.fontSize = '1.3em'
+            resultado.style.display = "block"
+            opcoes.style.alignItems = 'center'
+            opcoes.style.display = 'flex'
+            opcoes.style.height = '15%'
+
+            const jogarNovamente = document.createElement('button');
+            jogarNovamente.textContent = "Jogar Novamente";
+            jogarNovamente.classList.add('opcao');
+            jogarNovamente.onclick = () => location.reload();
+            jogarNovamente.style.height = '20%';
+
+
+            const retornarSite = document.createElement('a');
+            retornarSite.textContent = "Retornar ao Site!";
+            retornarSite.href = "../../index.html";
+            retornarSite.classList.add('opcao');
+            retornarSite.style.textDecoration = 'none';
+            retornarSite.style.height = '20%';
+
+            opcoesEl.appendChild(jogarNovamente);
+            opcoesEl.appendChild(retornarSite);
+        }
+
+        carregarPergunta();
+    </script>
+</body>
+
+</html>
