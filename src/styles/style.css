@@ -22,7 +22,7 @@ body {
   font-family: 'montserrat';
   overflow-x: hidden;
   background-color: #0A100D;
-  color: white  ;
+  color: white;
   height: 100vh;
 }
 
@@ -72,6 +72,52 @@ nav a:hover {
   height: 60%;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.445));
   transition: height 0.3s ease;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.dropbtn {
+  width: 30%;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background-color: #ffffff71;
+  border-radius: 10px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 10;
+  text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+.dropdown-content a:hover {
+  transform: scale(1.1);
 }
 
 #menuBurguer {
@@ -210,8 +256,8 @@ nav a:hover {
 #objetivos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px; 
-  width: 70%; 
+  gap: 30px;
+  width: 70%;
   margin: 0 auto;
 }
 
@@ -271,7 +317,8 @@ nav a:hover {
   width: 100vw;
 }
 
-#secao4, #secao4-2 {
+#secao4,
+#secao4-2 {
   display: flex;
   align-items: center;
   height: 40%;
@@ -333,6 +380,13 @@ nav a:hover {
   border-radius: 30px;
 }
 
+#section5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
 
 .icons img {
   filter: invert();
@@ -346,11 +400,13 @@ nav a:hover {
   transform: scale(1.1);
 }
 
-#secao5 h1, #secao6 h1 {
+#secao5 h1,
+#secao6 h1 {
   font-size: 3em;
 }
 
-#secao5 p, #secao6 p {
+#secao5 p,
+#secao6 p {
   font-size: 1.6em;
 }
 
@@ -372,6 +428,29 @@ nav a:hover {
   width: 70%;
 }
 
+#foto1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30%;
+  width: 100%;
+}
+
+.foto2 {
+  height: 100%;
+  width: 20%;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.445);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 135%;
+  transition-duration: 0.3s;
+}
+
+.foto2:hover {
+  background-size: 160%;
+}
+
 #video {
   display: flex;
   justify-content: center;
@@ -390,12 +469,27 @@ nav a:hover {
 }
 
 #video p {
-    position: absolute;
-    top: 10%;
-    color: white;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    z-index: 10;
+  position: absolute;
+  top: 10%;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+footer {
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#rodape {
+  width: 70%;
+}
+
+#rodape p {
+  font-size: 1.3em;
 }
 
 .reveal {
