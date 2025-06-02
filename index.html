@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encharcada</title>
     <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="stylesheet" href="src/styles/media.css">
     <link rel="shortcut icon" href="src/assets/imgs/favicon.png" type="image/x-icon">
 </head>
 
@@ -19,13 +20,14 @@
             <a href="#section4">Público</a>
             <a href="#section5">Benefícios</a>
             <a href="#section6">Solução</a>
+            <a href="#section7">Quiz</a>
         </nav>
         <div class="dropdown">
             <img src="src/assets/imgs/menu-burger.png" alt="Menu" class="dropbtn" />
             <div class="dropdown-content">
-                <a href="src/pages/quiz.html">Quiz</a>
-                <a href="#">Opção 2</a>
-                <a href="#">Opção 3</a>
+                <a onclick="setTema('escuro')">Tema Dark</a>
+                <a onclick="setTema('claro')">Tema Light</a>
+                <a onclick="setTema('azul')">Tema Azul</a>
             </div>
         </div>
 
@@ -133,12 +135,14 @@
                         ou móveis por causa de alagamento. A gente pensou em todos: moradores, prefeituras, Defesa
                         Civil,
                         ONGs e quem mais quiser ajudar a cuidar do problema.</p>
+                    <div id="teste1"></div>
                 </div>
                 <img src="src/assets/imgs/vertical.jpg" alt="">
             </div>
             <div id="secao4">
                 <img src="src/assets/imgs/crianca.jpg" alt="" style="height: 70%;">
                 <div class="textos" style="text-align: right; height: 80%;">
+                    <div id="teste2"></div>
                     <p>Quanto mais gente sabendo o que tá acontecendo, mais rápido dá pra agir. Quem tá em casa se
                         protege melhor, e quem está na linha de frente ganha tempo pra ajudar mais gente. A Encharcada
                         não resolve tudo sozinha, mas é um passo muito importante pra virar esse jogo.</p>
@@ -200,17 +204,12 @@
         </section>
         <section id="section8">
             <div id="secao8">
-                <h1>Nossa Solução</h1>
-                <p>O aplicativo da Encharcada é uma plataforma que monitora em tempo real os riscos de enchentes,
-                    utilizando sensores IoT ( Internet das Coisas ) para coletar dados sobre níveis de água e
-                    condições meteorológicas. Ele envia alertas personalizados para os usuários com base na
-                    localização e integra com sistemas de gestão de emergências. A interface é simples e responsiva,
-                    oferecendo relatórios detalhados e previsões para ajudar na prevenção de alagamentos.</p>
-                <div id="foto1">
-                    <div class="foto2" style="background-image: url(src/assets/imgs/mapaCelular.jpg);"></div>
-                    <div class="foto2" style="background-image: url(src/assets/imgs/notebook.jpg);"></div>
-                    <div class="foto2" style="background-image: url(src/assets/imgs/tablet.jpg);"></div>
-                    <div class="foto2" style="background-image: url(src/assets/imgs/bike.jpg);"></div>
+                <h1>Teste seus conhecimentos!</h1>
+                <p>Agora que você já conhece o funcionamento da Encharcada, que tal testar seus conhecimentos com um
+                    quiz
+                    interativo? Descubra o quanto aprendeu e desafie-se a acertar todas!</p>
+                <div id="btnQuiz">
+                    <a href="src/pages/quiz.html">Jogar Agora!</a>
                 </div>
             </div>
         </section>

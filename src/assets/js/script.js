@@ -1,23 +1,21 @@
 function revealOnScroll() {
-    const reveals = document.querySelectorAll('.reveal');
-    const windowHeight = window.innerHeight;
+  const reveals = document.querySelectorAll('.reveal');
+  const windowHeight = window.innerHeight;
 
-    reveals.forEach((element) => {
-      const elementTop = element.getBoundingClientRect().top;
+  reveals.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
 
-      if (elementTop < windowHeight - 100) {
-        element.classList.add('active');
-      }
-    });
-  }
+    if (elementTop < windowHeight - 100) {
+      element.classList.add('active');
+    }
+  });
+}
 
-  window.addEventListener('scroll', revealOnScroll);
-  window.addEventListener('load', revealOnScroll);
-
-
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
 
 
-  const slides = document.querySelectorAll('.carrossel-slide');
+const slides = document.querySelectorAll('.carrossel-slide');
 const indicadores = document.querySelectorAll('.indicador');
 const btnProximo = document.getElementById('proximo');
 const btnAnterior = document.getElementById('anterior');
@@ -65,5 +63,7 @@ window.addEventListener('scroll', function () {
   }
 });
 
-// QUIZ
-
+function setTema(tema) {
+  document.body.className = ''; 
+  document.body.classList.add(`tema-${tema}`);
+}

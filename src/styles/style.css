@@ -14,11 +14,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #242424;
+  background: #4e4e4e;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #293b53;
+  background: #4375b6;
   border-radius: 5px;
 }
 
@@ -38,7 +38,92 @@ body {
   background-color: #0A100D;
   color: white;
   height: 100vh;
+  transition: all 0.3s ease-out;
 }
+
+.tema-claro {
+  background-color: white;
+  color: #0A100D;
+}
+
+.tema-claro header a {
+  color: white;
+  text-shadow: none;
+}
+
+.tema-claro header.shrink a {
+  filter: invert();
+}
+
+.tema-claro header.shrink img {
+  filter: invert();
+}
+
+.tema-claro .divObjetivos {
+  color: black;
+  background-color: rgb(219, 219, 219);
+}
+
+.tema-claro .divObjetivos h2,
+.tema-claro .divObjetivos p,
+.tema-claro .objetivos h1 {
+  text-shadow: none;
+}
+
+.tema-claro .divObjetivos:hover {
+  color: black;
+  border: solid black 3px;
+}
+
+.tema-claro .icons {
+  filter: invert(0);
+}
+
+.tema-claro #fundo h1 {
+  color: white;
+}
+
+.tema-claro #fundo {
+  background-image: url(../assets/imgs/fundoTopo2.jpg);
+}
+
+.tema-claro #video video {
+  opacity: 50%;
+}
+
+.tema-claro #btnQuiz {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.445);
+  border: solid 3px black;
+}
+
+.tema-claro #btnQuiz:hover {
+  border: none;
+}
+
+.tema-claro #btnQuiz:hover a {
+  color: white;
+}
+
+.tema-claro #btnQuiz a {
+  color: black;
+}
+
+.tema-claro #rodape a {
+  color: black;
+}
+
+body.tema-azul {
+  background-color: #031d3f;
+}
+
+.tema-azul #fundo {
+  background-image: url(../assets/imgs/fundoTopo3.jpg);
+}
+
+.tema-azul .divObjetivos {
+  background-color: #07346e;
+}
+
 
 header {
   display: flex;
@@ -51,6 +136,16 @@ header {
   top: 0;
   z-index: 9999;
   transition: height 0.5s ease, opacity 0.3s ease-in;
+}
+
+header .temasImg {
+  height: 35px;
+  filter: invert();
+}
+
+header .temasImg:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 header.shrink {
@@ -92,6 +187,10 @@ nav a:hover {
   position: relative;
   display: flex;
   justify-content: center;
+}
+
+.dropdown a {
+  cursor: pointer;
 }
 
 .dropbtn {
@@ -296,7 +395,6 @@ nav a:hover {
 }
 
 #objetivos h1 {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.445);
   font-size: 3em;
   align-self: center;
   text-align: center;
@@ -397,12 +495,13 @@ nav a:hover {
   height: 100vh;
 }
 
-.icons img {
+.icons {
   filter: invert();
+  transition-duration: 0.2s;
 }
 
-.icons {
-  transition-duration: 0.2s;
+.icons h2 {
+  color: black;
 }
 
 .icons:hover {
@@ -470,6 +569,7 @@ nav a:hover {
   object-fit: cover;
   height: 30vh;
   background-color: rgb(0, 0, 0);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.445);
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -503,17 +603,40 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 50vh;
 }
 
 #secao8 {
+  margin-top: -30vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
   height: 80%;
   width: 70%;
+}
+
+#btnQuiz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid white 3px;
+  width: 18vw;
+  height: 8vh;
+  transition: all 0.2s ease-out;
+}
+
+#btnQuiz:hover {
+  background-color: #3c65b3;
+  transform: scale(1.1);
+}
+
+#btnQuiz a {
+  color: #fff;
+  font-size: 1.5em;
+  text-decoration: none;
+  font-family: 'pixel';
 }
 
 footer {
@@ -555,6 +678,10 @@ footer {
 
 /* QUIZ */
 
+.bodyQuiz {
+  background-image: url(../assets/imgs/fundoQuiz--.gif);
+  background-size: 15%;
+}
 
 #quiz {
   font-family: 'pixel';
@@ -601,6 +728,7 @@ footer {
   justify-content: center;
   color: white;
   font-size: 18px;
+  border: none;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -619,4 +747,37 @@ footer {
   margin-top: 20px;
   font-size: 18px;
   font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .bodyQuiz {
+    background-size: 50%;
+  }
+
+  #divQuiz {
+    width: 90%;
+    height: 90vh;
+    padding: 20px;
+  }
+
+  #opcoes {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 15px;
+    height: auto;
+    flex-direction: column;
+    display: flex !important;
+  }
+
+  .opcao {
+    padding: 15px;
+    font-size: 16px;
+    height: auto !important;
+  }
+
+  #resultado {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
 }
