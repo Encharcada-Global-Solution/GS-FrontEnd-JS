@@ -46,7 +46,6 @@
 
     #secao4 {
         width: 95vw;
-        height: 70vh;
         display: block;
         align-items: center;
         text-align: center;
@@ -54,10 +53,12 @@
     }
 
     #secao4 img {
+        margin: 20px 0px;
         display: none;
     }
 
     #secao4 p {
+        text-align: justify;
         font-size: 1.1em;
     }
 
@@ -97,6 +98,7 @@
     }
 
     #section5 p {
+        text-align: justify;
         font-size: 1.1em;
     }
 
@@ -105,6 +107,8 @@
     }
 
     #section6 p {
+        hyphens: auto;
+        text-align: left;
         font-size: 1.1em;
     }
 
@@ -124,6 +128,7 @@
     }
 
     #video{
+        width: 99vw;
         height: 20vh;
     }
     
@@ -138,6 +143,15 @@
 
     #secao8 h1 {
         font-size: 2em;
+    }
+
+    #secao8 h1 {
+        font-size: 2em;
+    }
+
+    #secao8 p {
+        text-align: justify;
+        hyphens: auto;
     }
 
     #btnQuiz {

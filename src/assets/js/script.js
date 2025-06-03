@@ -1,3 +1,15 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.querySelector(".nav-menu");
+
+  toggle.addEventListener("click", () => {
+    toggle.classList.toggle("open");
+    menu.classList.toggle("active");
+  });
+});
+
+
+
 function revealOnScroll() {
   const reveals = document.querySelectorAll('.reveal');
   const windowHeight = window.innerHeight;
