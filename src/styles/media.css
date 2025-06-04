@@ -1,5 +1,10 @@
 @media (max-width: 768px) {
 
+    body, html {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
     nav {
         display: none;
     }
@@ -12,8 +17,72 @@
         font-size: 1.3em;
     }
 
+    header {
+        justify-content: space-between;
+        align-items: center;
+        width: 90vw;
+    }
+
     #logo {
         height: 3vh;
+    }
+
+    .dropdown {
+        display: none;
+    }
+
+    #menu-toggle {
+        z-index: 1000;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    #menu-toggle .bar {
+        width: 30px;
+        height: 3px;
+        background-color: #ffffff;
+    }
+
+    #menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        height: 50vh;
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        padding: 60px 20px;
+        gap: 20px;
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+
+    #menu a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+    }
+
+    #menu.ativo {
+        right: 0;
+    }
+
+    #menu-toggle.ativo .bar:nth-child(1) {
+        background-color: black;
+        transform: rotate(45deg) translateY(10px);
+    }
+
+    #menu-toggle.ativo .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle.ativo .bar:nth-child(3) {
+        background-color: black;
+        transform: rotate(-45deg) translateY(-10px);
     }
 
     #carrosselTecnologias {
@@ -127,11 +196,11 @@
         width: 80%;
     }
 
-    #video{
+    #video {
         width: 100vw;
         height: 20vh;
     }
-    
+
     #video h1 {
         height: 1vh;
         font-size: 1.4em;
@@ -139,6 +208,10 @@
 
     #section8 {
         height: 80vh;
+    }
+
+    #secao8 {
+        height: 80%;
     }
 
     #secao8 h1 {

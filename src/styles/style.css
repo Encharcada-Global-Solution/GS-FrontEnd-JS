@@ -131,7 +131,7 @@ header {
   justify-content: space-evenly;
   align-items: center;
   height: 10vh;
-  width: 100vw;
+  width: 100%;
   margin: 15px;
   position: fixed;
   top: 0;
@@ -183,6 +183,12 @@ nav a:hover {
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.445));
   transition: height 0.3s ease;
 }
+
+#menu-toggle, #menu {
+  display: none;
+}
+
+
 
 .dropdown {
   position: relative;
@@ -238,7 +244,7 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-image: url(../assets/imgs/fundoTopo.jpg);
   background-size: cover;
 }
@@ -255,7 +261,7 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 
 #carrosselTecnologias {
@@ -263,7 +269,7 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 
 .carrossel-container {
@@ -358,7 +364,7 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 
 #objetivos {
@@ -421,7 +427,7 @@ nav a:hover {
   justify-content: space-evenly;
   flex-direction: column;
   height: 180vh;
-  width: 100vw;
+  width: 100%;
 }
 
 #secao4,
@@ -466,7 +472,7 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 
@@ -493,7 +499,7 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 
@@ -526,7 +532,7 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 
@@ -604,7 +610,7 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 50vh;
 }
 
@@ -689,7 +695,7 @@ footer {
   font-family: 'pixel';
   font-weight: normal;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

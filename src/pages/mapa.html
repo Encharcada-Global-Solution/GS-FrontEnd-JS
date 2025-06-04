@@ -12,23 +12,23 @@
 <body>
     <a href="../../index.html"><img src="../assets/imgs/logo.png" id="logo" alt=""></a>
     <h1>Área com risco de alagamento!</h1>
-    <img src="../assets/imgs/mapa1.svg" id="perigo" alt="">
+    <img src="../assets/imgs/mapa1.svg" id="perigo" alt="" >
     <script>
-        const img = document.getElementById("perigo");
+    const img = document.getElementById("perigo");
 
-        function posicionarAleatoriamente() {
-            const margem = 50; // margem de segurança dos cantos
-            const largura = window.innerWidth - img.offsetWidth - margem * 2;
-            const altura = window.innerHeight - img.offsetHeight - margem * 2;
+    function posicionarAleatoriamenteComMargem() {
+        const margem = 250; // margem de 100px dos cantos
+        const largura = window.innerWidth - img.offsetWidth - margem * 2;
+        const altura = window.innerHeight - img.offsetHeight - margem * 2;
 
-            const x = Math.random() * largura + margem;
-            const y = Math.random() * altura + margem;
+        const x = Math.random() * largura + margem;
+        const y = Math.random() * altura + margem;
 
-            img.style.left = `${x}px`;
-            img.style.top = `${y}px`;
-        }
+        img.style.left = `${x}px`;
+        img.style.top = `${y}px`;
+    }
 
-        posicionarAleatoriamente();
+    window.onload = posicionarAleatoriamenteComMargem;
     </script>
 
 </body>

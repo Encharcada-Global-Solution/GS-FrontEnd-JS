@@ -1,14 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.querySelector(".nav-menu");
-
-  toggle.addEventListener("click", () => {
-    toggle.classList.toggle("open");
-    menu.classList.toggle("active");
-  });
-});
-
-
 
 function revealOnScroll() {
   const reveals = document.querySelectorAll('.reveal');
@@ -76,6 +65,14 @@ window.addEventListener('scroll', function () {
 });
 
 function setTema(tema) {
-  document.body.className = ''; 
+  document.body.className = '';
   document.body.classList.add(`tema-${tema}`);
 }
+
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+menuToggle.addEventListener('click', () => {
+menu.classList.toggle('ativo');
+menuToggle.classList.toggle('ativo');
+});

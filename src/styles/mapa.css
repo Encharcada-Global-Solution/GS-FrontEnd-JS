@@ -19,11 +19,12 @@ body {
 
 body h1 {
     margin: auto;
-    padding: 15px;
-    color: red;
+    padding: 10px;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgb(236, 60, 60);
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.466);
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.466);
-    border: red solid 3px;
     position: fixed;
     bottom: 60px;
 }
@@ -60,6 +61,7 @@ a {
         height: 100vh;
         background-image: url(../assets/imgs/mapaVertical.svg);
         background-size: cover;
+        overflow: hidden;
         background-repeat: no-repeat;
     }
 
@@ -70,11 +72,19 @@ a {
         width: 80vw;
     }
 
+    a {
+        width: 70vw;
+        left: 16%;
+    }
+
     #logo {
-        left: 0px;
+        width: 100%;
     }
 
     #perigo {
+        margin-top: 100px;
+        margin-bottom: 100px;
         width: 35px;
     }
+
 }
