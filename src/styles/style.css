@@ -426,6 +426,7 @@ nav a:hover {
 
 #secao4,
 #secao4-2 {
+  padding: 20px 0px;
   display: flex;
   align-items: center;
   height: 40%;
@@ -448,6 +449,7 @@ nav a:hover {
 }
 
 #secao4 img {
+  padding: 10px 0px;
   border-radius: 20px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.445);
   height: 100%;

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa</title>
+    <link rel="shortcut icon" href="../assets/imgs/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/mapa.css">
+</head>
+
+<body>
+    <a href="../../index.html"><img src="../assets/imgs/logo.png" id="logo" alt=""></a>
+    <h1>Área com risco de alagamento!</h1>
+    <img src="../assets/imgs/mapa1.svg" id="perigo" alt="">
+    <script>
+        const img = document.getElementById("perigo");
+
+        function posicionarAleatoriamente() {
+            const margem = 50; // margem de segurança dos cantos
+            const largura = window.innerWidth - img.offsetWidth - margem * 2;
+            const altura = window.innerHeight - img.offsetHeight - margem * 2;
+
+            const x = Math.random() * largura + margem;
+            const y = Math.random() * altura + margem;
+
+            img.style.left = `${x}px`;
+            img.style.top = `${y}px`;
+        }
+
+        posicionarAleatoriamente();
+    </script>
+
+</body>
+
+</html>

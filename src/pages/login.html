@@ -16,7 +16,8 @@
             <h1>Login</h1>
             <div class="input">
                 <p>CPF</p>
-                <input type="text" id="cpf" placeholder="000.000.000-00">
+                <input type="text" id="cpf" autocomplete="off" minlength="14" maxlength="14" required
+                    placeholder="000.000.000-00">
             </div>
             <div class="input">
                 <p>Senha</p>
@@ -28,17 +29,49 @@
         <div id="notificacao" class="notificacao"></div>
     </div>
     <script>
-        const botao = document.querySelector("button");
-        const notificacao = document.getElementById("notificacao");
-
         function mostrarMensagem(texto, tipo) {
             notificacao.textContent = texto;
-            notificacao.className = `notificacao ${tipo}`;
-            notificacao.style.display = "block";
+            notificacao.className = `notificacao ${tipo} show`;
             setTimeout(() => {
-                notificacao.style.display = "none";
+                notificacao.classList.remove("show");
             }, 2000);
         }
+
+        const cpfInput = document.getElementById("cpf");
+
+        cpfInput.addEventListener("input", () => {
+            let valor = cpfInput.value.replace(/\D/g, "").slice(0, 11); // Só números, até 11
+            let formatado = "";
+
+            if (valor.length > 0) formatado += valor.slice(0, 3);
+            if (valor.length >= 4) formatado += "." + valor.slice(3, 6);
+            if (valor.length >= 7) formatado += "." + valor.slice(6, 9);
+            if (valor.length >= 10) formatado += "-" + valor.slice(9, 11);
+
+            cpfInput.value = formatado;
+        });
+
+
+        function validarCPF(cpf) {
+            cpf = cpf.replace(/\D/g, '');
+            if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
+
+            let soma = 0;
+            for (let i = 0; i < 9; i++) soma += parseInt(cpf[i]) * (10 - i);
+            let dig1 = (soma * 10) % 11;
+            if (dig1 === 10) dig1 = 0;
+            if (dig1 !== parseInt(cpf[9])) return false;
+
+            soma = 0;
+            for (let i = 0; i < 10; i++) soma += parseInt(cpf[i]) * (11 - i);
+            let dig2 = (soma * 10) % 11;
+            if (dig2 === 10) dig2 = 0;
+
+            return dig2 === parseInt(cpf[10]);
+        }
+
+        const botao = document.querySelector("button");
+        const notificacao = document.getElementById("notificacao");
 
         botao.addEventListener("click", () => {
             const cpf = document.getElementById("cpf").value.trim();
@@ -49,11 +82,17 @@
                 return;
             }
 
+            if (!validarCPF(cpf)) {
+                mostrarMensagem("CPF inválido.", "erro");
+                return;
+            }
+
             mostrarMensagem("Login realizado com sucesso!", "sucesso");
             setTimeout(() => {
-                window.location.href = "pagina-inicial.html";
+                window.location.href = "../../index.html";
             }, 2000);
         });
+
     </script>
 
 </body>
