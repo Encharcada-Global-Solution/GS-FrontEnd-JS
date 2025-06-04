@@ -25,7 +25,37 @@
             <button type="submit">Entrar</button>
             <img src="../assets/imgs/logo.png" alt="">
         </div>
+        <div id="notificacao" class="notificacao"></div>
     </div>
+    <script>
+        const botao = document.querySelector("button");
+        const notificacao = document.getElementById("notificacao");
+
+        function mostrarMensagem(texto, tipo) {
+            notificacao.textContent = texto;
+            notificacao.className = `notificacao ${tipo}`;
+            notificacao.style.display = "block";
+            setTimeout(() => {
+                notificacao.style.display = "none";
+            }, 2000);
+        }
+
+        botao.addEventListener("click", () => {
+            const cpf = document.getElementById("cpf").value.trim();
+            const senha = document.getElementById("senha").value.trim();
+
+            if (!cpf || !senha) {
+                mostrarMensagem("Preencha todos os campos.", "erro");
+                return;
+            }
+
+            mostrarMensagem("Login realizado com sucesso!", "sucesso");
+            setTimeout(() => {
+                window.location.href = "pagina-inicial.html";
+            }, 2000);
+        });
+    </script>
+
 </body>
 
 </html>

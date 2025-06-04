@@ -8,20 +8,7 @@
     form { border: 1px solid #ccc; padding: 20px; border-radius: 10px; }
     input { display: block; margin-bottom: 10px; width: 200px; padding: 5px; }
 
-    .notificacao {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      border-radius: 5px;
-      color: white;
-      display: none;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      z-index: 999;
-    }
 
-    .erro { background: #e53935; }
-    .sucesso { background: #4CAF50; }
   </style>
 </head>
 <body>
@@ -34,32 +21,6 @@
     <button type="submit">Entrar</button>
   </form>
 
-  <script>
-    const form = document.getElementById("loginForm");
-    const notificacao = document.getElementById("notificacao");
 
-    function mostrarMensagem(texto, tipo) {
-      notificacao.textContent = texto;
-      notificacao.className = `notificacao ${tipo}`;
-      notificacao.style.display = "block";
-      setTimeout(() => notificacao.style.display = "none", 2000);
-    }
-
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-      const usuario = document.getElementById("usuario").value.trim();
-      const senha = document.getElementById("senha").value.trim();
-
-      if (!usuario || !senha) {
-        mostrarMensagem("Preencha todos os campos.", "erro");
-        return;
-      }
-
-      mostrarMensagem("Login realizado com sucesso!", "sucesso");
-      setTimeout(() => {
-        window.location.href = "pagina-inicial.html";
-      }, 2000);
-    });
-  </script>
 </body>
 </html>
