@@ -12,23 +12,32 @@
 <body>
     <a href="../../index.html"><img src="../assets/imgs/logo.png" id="logo" alt=""></a>
     <h1>Área com risco de alagamento!</h1>
-    <img src="../assets/imgs/mapa1.svg" id="perigo" alt="" >
+    <img src="../assets/imgs/mapa1.svg" id="perigo" alt="">
     <script>
-    const img = document.getElementById("perigo");
+        // Seleciona a imagem com id "perigo"
+        const img = document.getElementById("perigo");
 
-    function posicionarAleatoriamenteComMargem() {
-        const margem = 250; // margem de 100px dos cantos
-        const largura = window.innerWidth - img.offsetWidth - margem * 2;
-        const altura = window.innerHeight - img.offsetHeight - margem * 2;
+        // Função para posicionar a imagem em um lugar aleatório da tela,
+        // respeitando uma margem de 250px das bordas
+        function posicionarAleatoriamenteComMargem() {
+            const margem = 250; // margem de segurança em todos os lados
 
-        const x = Math.random() * largura + margem;
-        const y = Math.random() * altura + margem;
+            // Calcula a área disponível (tela menos a largura da imagem e margens)
+            const largura = window.innerWidth - img.offsetWidth - margem * 2;
+            const altura = window.innerHeight - img.offsetHeight - margem * 2;
 
-        img.style.left = `${x}px`;
-        img.style.top = `${y}px`;
-    }
+            // Gera coordenadas aleatórias dentro da área válida
+            const x = Math.random() * largura + margem;
+            const y = Math.random() * altura + margem;
 
-    window.onload = posicionarAleatoriamenteComMargem;
+            // Aplica as coordenadas como posição da imagem
+            img.style.left = `${x}px`;
+            img.style.top = `${y}px`;
+        }
+
+        // Executa a função quando a página carregar
+        window.onload = posicionarAleatoriamenteComMargem;
+
     </script>
 
 </body>

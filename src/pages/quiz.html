@@ -110,54 +110,62 @@
                 resposta: 1
             },
             {
-                pergunta: "O Encharcada se destaca porque é?",
+                pergunta: "A Encharcada se destaca porque é?",
                 opcoes: [
-                    "Feito apenas para grandes cidades",
-                    "Baseado em achismos",
-                    "Tecnológico, acessível e focado em quem mais precisa",
-                    "Limitado a governos"
+                    "Feita apenas para grandes cidades",
+                    "Baseada em achismos",
+                    "Tecnológica, acessível e focada em quem mais precisa",
+                    "Limitada a governos"
                 ],
                 resposta: 2
             }
         ];
 
-        let indiceAtual = 0;
-        let pontuacao = 0;
+        // ===== Variáveis de controle do quiz =====
+        let indiceAtual = 0;       // Índice da pergunta atual
+        let pontuacao = 0;         // Pontuação do usuário
 
+        // ===== Seleciona elementos do HTML =====
         const perguntaEl = document.getElementById("pergunta");
         const opcoesEl = document.getElementById("opcoes");
         const resultadoEl = document.getElementById("resultado");
 
+        // ===== Carrega a pergunta atual no HTML =====
         function carregarPergunta() {
-            const atual = perguntas[indiceAtual];
+            const atual = perguntas[indiceAtual]; // Pergunta atual
             perguntaEl.textContent = atual.pergunta;
-            opcoesEl.innerHTML = "";
+            opcoesEl.innerHTML = ""; // Limpa opções anteriores
 
+            // Cria botões de opção
             atual.opcoes.forEach((opcao, index) => {
                 const btn = document.createElement("button");
                 btn.textContent = opcao;
                 btn.classList.add("opcao");
-                btn.onclick = () => verificarResposta(index);
+                btn.onclick = () => verificarResposta(index); // Verifica resposta ao clicar
                 opcoesEl.appendChild(btn);
             });
         }
 
+        // ===== Verifica se a resposta está correta =====
         function verificarResposta(respostaSelecionada) {
             const correta = perguntas[indiceAtual].resposta;
             const botoes = document.querySelectorAll(".opcao");
 
+            // Mostra cores de feedback e desativa botões
             botoes.forEach((btn, index) => {
                 btn.disabled = true;
                 if (index === correta) {
-                    btn.style.backgroundColor = "#4CAF50"; // verde
+                    btn.style.backgroundColor = "#4CAF50"; // Verde se correta
                 }
                 if (index === respostaSelecionada && index !== correta) {
-                    btn.style.backgroundColor = "#f44336"; // vermelho
+                    btn.style.backgroundColor = "#f44336"; // Vermelho se errada
                 }
             });
 
+            // Soma ponto se acertou
             if (respostaSelecionada === correta) pontuacao++;
 
+            // Vai para a próxima pergunta depois de 2 segundos
             setTimeout(() => {
                 indiceAtual++;
                 if (indiceAtual < perguntas.length) {
@@ -165,28 +173,33 @@
                 } else {
                     mostrarResultadoFinal();
                 }
-            }, 2000); // 1 segundo antes de trocar a pergunta
+            }, 2000);
         }
 
-
+        // ===== Exibe resultado final =====
         function mostrarResultadoFinal() {
             perguntaEl.textContent = "Fim do Quiz!";
-            perguntaEl.style.fontSize = '2em'
+            perguntaEl.style.fontSize = '2em';
             opcoesEl.innerHTML = '';
-            resultadoEl.innerHTML = `Você acertou <strong>${pontuacao}</strong> de <strong>${perguntas.length}</strong> perguntas.`;
-            resultadoEl.style.fontSize = '1.3em'
-            resultado.style.display = "block"
-            opcoes.style.alignItems = 'center'
-            opcoes.style.display = 'flex'
-            opcoes.style.height = '15%'
 
+            // Mostra pontuação
+            resultadoEl.innerHTML = `Você acertou <strong>${pontuacao}</strong> de <strong>${perguntas.length}</strong> perguntas.`;
+            resultadoEl.style.fontSize = '1.3em';
+            resultadoEl.style.display = "block";
+
+            // Estiliza container de opções
+            opcoesEl.style.alignItems = 'center';
+            opcoesEl.style.display = 'flex';
+            opcoesEl.style.height = '15%';
+
+            // Botão para jogar novamente
             const jogarNovamente = document.createElement('button');
             jogarNovamente.textContent = "Jogar Novamente";
             jogarNovamente.classList.add('opcao');
             jogarNovamente.onclick = () => location.reload();
             jogarNovamente.style.height = '20%';
 
-
+            // Link para voltar ao site
             const retornarSite = document.createElement('a');
             retornarSite.textContent = "Retornar ao Site!";
             retornarSite.href = "../../index.html";
@@ -194,11 +207,14 @@
             retornarSite.style.textDecoration = 'none';
             retornarSite.style.height = '20%';
 
+            // Adiciona botões ao HTML
             opcoesEl.appendChild(jogarNovamente);
             opcoesEl.appendChild(retornarSite);
         }
 
+        // ===== Inicia o quiz ao carregar =====
         carregarPergunta();
+
     </script>
 </body>
 

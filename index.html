@@ -21,6 +21,11 @@
             <a href="#section5">Benefícios</a>
             <a href="#section6">Solução</a>
             <a href="#section7">Quiz</a>
+            <a href="src/pages/login.html">Fazer Login</a>
+            <a href="src/pages/mapa.html">Ver Mapa</a>
+            <a onclick="setTema('escuro')">Tema Dark</a>
+            <a onclick="setTema('claro')">Tema Light</a>
+            <a onclick="setTema('azul')">Tema Azul</a>
         </nav>
         <nav>
             <a href="#top">Ínicio</a>
@@ -50,46 +55,60 @@
     </header>
     <main>
         <div id="fundo">
-            <h1 class="reveal">Todos os anos, milhares de pessoas são afetadas pelas enchentes. <br>
+            <h1 class="reveal reveal-bottom">Todos os anos, milhares de pessoas são afetadas pelas enchentes. <br>
                 Casas alagadas, vidas perdidas, infraestrutura destruída. </h1>
         </div>
-        <section id="carrosselTecnologias" class="reveal">
+        <section class="reveal" id="carrosselTecnologias">
             <div class="carrossel-container">
                 <div class="carrossel-slide ativo" data-bg="#00a6fb">
                     <div class="slide-conteudo">
-                        <h2>Tecnologias Utilizadas</h2>
-                        <p>Coleta dados de sensores físicos para monitorar enchentes em tempo real.</p>
+                        <h2>Tecnologia na Prevenção</h2>
+                        <p>Unimos sensores inteligentes, programação e matemática aplicada para detectar enchentes com
+                            agilidade e precisão, permitindo ações preventivas rápidas que protegem comunidades antes
+                            que o pior aconteça.</p>
                     </div>
                 </div>
+
                 <div class="carrossel-slide" data-bg="#0582ca">
                     <div class="slide-conteudo">
-                        <h2>IoT</h2>
-                        <p>Transmite os dados captados pelos sensores para um sistema em nuvem.</p>
+                        <h2>Internet das Coisas (IoT)</h2>
+                        <p>Com sensores posicionados em áreas de risco, o sistema coleta e envia dados em tempo real via
+                            Arduino e nuvem, reagindo automaticamente a mudanças no ambiente e prevenindo alagamentos.
+                        </p>
                     </div>
                 </div>
+
                 <div class="carrossel-slide" data-bg="#006494">
                     <div class="slide-conteudo">
-                        <h2>HTML, CSS e JS</h2>
-                        <p>Interface web responsiva para visualização das informações em tempo real.</p>
+                        <h2>HTML, CSS e JavaScript</h2>
+                        <p>Desenvolvemos uma interface moderna, responsiva e acessível, que permite visualizar dados,
+                            navegar pelo conteúdo e interagir com o sistema de forma clara e intuitiva.</p>
                     </div>
                 </div>
 
                 <div class="carrossel-slide" data-bg="#004e98">
                     <div class="slide-conteudo">
                         <h2>Python</h2>
-                        <p>Processamento de dados e análise em tempo real.</p>
+                        <p>Usado para controlar sensores, interpretar os dados coletados e automatizar alertas, o Python
+                            torna o sistema inteligente, modular e confiável para diversas situações de risco.</p>
                     </div>
                 </div>
+
                 <div class="carrossel-slide" data-bg="#3a6ea5">
                     <div class="slide-conteudo">
-                        <h2>React</h2>
-                        <p>Interface interativa para visualização dos dados de sensores.</p>
+                        <h2>Modelagem Matemática</h2>
+                        <p>Simulamos o comportamento do nível dos rios com funções polinomiais, permitindo prever
+                            situações de risco e tomar decisões baseadas em evidências visuais e numéricas.</p>
                     </div>
                 </div>
-                <div class="carrossel-slide" data-bg="#009688">
+
+                <div class="carrossel-slide" data-bg="#5860AC">
                     <div class="slide-conteudo">
-                        <h2>Node.js</h2>
-                        <p>Serviço de backend para processamento e armazenamento dos dados.</p>
+                        <iframe style="border-radius: 20px; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.39);" width="700"
+                            height="405" src="https://www.youtube.com/embed/xxil9bYpTKQ?si=dJouWCzBs23zTv1u"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
 
@@ -106,8 +125,8 @@
                 </div>
             </div>
         </section>
-        <section id="section3" class="reveal">
-            <div id="objetivos">
+        <section id="section3">
+            <div id="objetivos" class="reveal reveal-left">
                 <h1>Nossos <br> Objetivos</h1>
                 <div class="divObjetivos">
                     <h2>Alertar sobre riscos de enchente</h2>
@@ -142,7 +161,7 @@
             </div>
         </section>
         <section id="section4">
-            <div id="secao4">
+            <div class="reveal reveal-bottom" id="secao4">
                 <div class="textos">
                     <h1>Público Alvo</h1>
                     <p>A Encharcada foi feita pra todo mundo, pois a chuva não escolhe onde cair. Tem quem mora em área
@@ -155,7 +174,7 @@
                 </div>
                 <img src="src/assets/imgs/vertical.jpg" alt="">
             </div>
-            <div id="secao4">
+            <div class="reveal reveal-bottom" id="secao4">
                 <img src="src/assets/imgs/crianca.jpg" alt="" style="height: 70%;">
                 <div class="textos" style="text-align: right; height: 80%;">
                     <div id="teste2"></div>
@@ -166,7 +185,7 @@
             </div>
         </section>
         <section id="section5">
-            <div id="secao5">
+            <div id="secao5" class="reveal reveal-left">
                 <h1>O que faz a Encharcada ser diferente?</h1>
                 <div id="container">
                     <div class="icons">
@@ -197,7 +216,7 @@
             </div>
         </section>
         <section id="section6">
-            <div id="secao6">
+            <div id="secao6" class="reveal">
                 <h1>Nossa Solução</h1>
                 <p>O aplicativo da Encharcada é uma plataforma que monitora em tempo real os riscos de enchentes,
                     utilizando sensores IoT ( Internet das Coisas ) para coletar dados sobre níveis de água e
@@ -219,7 +238,7 @@
             </div>
         </section>
         <section id="section8">
-            <div id="secao8">
+            <div id="secao8" class="reveal reveal-left">
                 <h1>Teste seus conhecimentos!</h1>
                 <p>Agora que você já conhece o funcionamento da Encharcada, que tal testar seus conhecimentos com um
                     quiz
@@ -231,12 +250,12 @@
         </section>
         <footer>
             <div id="rodape">
-                <p>&#169;encharda 2025</p>
+                <p>&#169;encharcada 2025</p>
                 <p>Site criado por <a href="https://github.com/thiagoluza" target="_blank">Thiago Luza</a></p>
             </div>
         </footer>
     </main>
-    <script src="src/assets/js/script.js"></script>
+    <script src="src/js/script.js"></script>
 </body>
 
 </html>

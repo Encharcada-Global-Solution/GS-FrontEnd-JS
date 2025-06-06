@@ -31,6 +31,8 @@
         display: none;
     }
 
+
+
     #menu-toggle {
         z-index: 1000;
         cursor: pointer;
@@ -38,6 +40,11 @@
         flex-direction: column;
         gap: 6px;
     }
+
+    .tema-claro #menu-toggle .bar {
+        background-color: black;
+      }
+      
 
     #menu-toggle .bar {
         width: 30px;
@@ -50,8 +57,8 @@
         top: 0;
         right: -100%;
         width: 60%;
-        height: 50vh;
-        background-color: rgba(255, 255, 255, 0.95);
+        height: 100vh;
+        background-color: #000000e7;
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
         display: flex;
         flex-direction: column;
@@ -63,7 +70,7 @@
 
     #menu a {
         text-decoration: none;
-        color: #000;
+        color: #fff;
         font-weight: bold;
     }
 
@@ -73,7 +80,7 @@
 
     #menu-toggle.ativo .bar:nth-child(1) {
         background-color: black;
-        transform: rotate(45deg) translateY(10px);
+        transform: rotate(45deg) translateY(12px);
     }
 
     #menu-toggle.ativo .bar:nth-child(2) {
@@ -82,11 +89,24 @@
 
     #menu-toggle.ativo .bar:nth-child(3) {
         background-color: black;
-        transform: rotate(-45deg) translateY(-10px);
+        transform: rotate(-45deg) translateY(-12px);
     }
 
     #carrosselTecnologias {
         height: 50vh;
+    }
+
+    .carrossel-slide {
+        padding: 10px;
+    }
+
+    iframe {
+        width: 250px;
+        height: 200px;
+    }
+
+    .carrossel-slide p {
+        font-size: 0.8em;
     }
 
     #carrossel-container {
@@ -237,5 +257,12 @@
 
     #rodape p {
         font-size: 0.6em;
+    }
+
+    .reveal,
+    .reveal-left,
+    .reveal-bottom {
+      opacity: 1 !important;
+      transform: none !important;
     }
 }
